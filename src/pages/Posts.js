@@ -35,7 +35,7 @@ class Posts extends React.Component {
                 
                 <Container>
                     <div className='jumbotron'>
-                        <p style={{fontSize: '70px'}}>Posts found: {countPosts} </p>
+                        <h1 style={{fontSize: '70h1x'}}>Posts found: {countPosts} </h1>
                     </div>
                     <div>
                         <Form>
@@ -67,13 +67,12 @@ class Posts extends React.Component {
                                 <Col md={4}>
                                     <Card key={post.id}>
                                         <Card.Body>
-                                            <Card.Title>
+                                            <Card.Title style={{fontWeight: 'bold', fontSize: '30px'}}>
                                                 {post.title}
                                             </Card.Title>
-                                            <Card.Text>
+                                            <Card.Text style={{ fontSize: '16px'}}>
                                                 {post.body}
                                             </Card.Text>
-                                            {/* <Card.Link href="#">Read more</Card.Link> */}
                                             <Link to={`/posts/${post.id}`}>Read more</Link>
                                         </Card.Body>
                                     </Card>

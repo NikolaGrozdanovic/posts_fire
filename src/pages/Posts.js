@@ -7,7 +7,8 @@ class Posts extends React.Component {
         super(props);
         this.state = {
             posts: [],
-            isLoaded: false
+            isLoaded: false,
+            countPosts: 0
         }
     }
     
@@ -17,13 +18,14 @@ class Posts extends React.Component {
             .then(json => {
                 this.setState({
                     isLoaded: true,
-                    posts: json
+                    posts: json,
+                    countPosts: json.length
                 })
             })
     }
 
     render() {
-        let { isLoaded, posts } = this.state;
+        let { isLoaded, posts, countPosts } = this.state;
 
         if (!isLoaded) {
             return <div>Loading...</div>
@@ -32,16 +34,28 @@ class Posts extends React.Component {
                 
                 <Container>
                     <div className='jumbotron'>
-                        <h1>Test</h1>
+                        <p style={{fontSize: '70px'}}>Posts found: {countPosts} </p>
                     </div>
                     <div>
-                        <ul>
-                            { posts.map(post => (
-                                <li key={post.id}>
-                                    {post.title}
-                                </li>
-                            ))}
-                        </ul>
+                        <Row>
+                            
+                                {posts.map(post => (
+                                    <Col md={4}>
+                                        <Card key={post.id}>
+                                            <Card.Body>
+                                                <Card.Title>
+                                                    {post.title}
+                                                </Card.Title>
+                                                <Card.Text>
+                                                    {post.body}
+                                                </Card.Text>
+                                                <Card.Link href="#">Card Link</Card.Link>
+                                                <Card.Link href="#">Another Link</Card.Link>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                ))};
+                        </Row>
                     </div>
                 </Container>
                

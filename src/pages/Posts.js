@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Card, Button, Container, Row, Col, Jumbotron, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class Posts extends React.Component {
 
@@ -72,7 +73,8 @@ class Posts extends React.Component {
                                             <Card.Text>
                                                 {post.body}
                                             </Card.Text>
-                                            <Card.Link href="#">Read more</Card.Link>
+                                            {/* <Card.Link href="#">Read more</Card.Link> */}
+                                            <Link to={`/posts/${post.id}`}>Read more</Link>
                                         </Card.Body>
                                     </Card>
                                 </Col>

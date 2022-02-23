@@ -3,13 +3,19 @@ import './App.css';
 import Posts from './pages/Posts';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
-} from "react-router-dom"
+} from "react-router-dom";
 
 function App() {
   return (
-    <Posts/>
+    <Router>
+      <Routes>
+        <Route path="/posts" element={<Posts/>}>
+        </Route>
+      </Routes>
+    </Router>
+    
   )
 }
 

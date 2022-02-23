@@ -72,8 +72,7 @@ class Posts extends React.Component {
                                             <Card.Text>
                                                 {post.body}
                                             </Card.Text>
-                                            <Card.Link href="#">Card Link</Card.Link>
-                                            <Card.Link href="#">Another Link</Card.Link>
+                                            <Card.Link href="#">Read more</Card.Link>
                                         </Card.Body>
                                     </Card>
                                 </Col>
